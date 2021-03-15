@@ -1,19 +1,15 @@
 package com.pro100kryto.server.services.usersdatabase.connection;
 
-public class UserDB {
+public abstract class UserDB {
     protected final long userId;
-    protected final String name;
 
-    public UserDB(long userId, String name) {
+    public UserDB(long userId) {
         this.userId = userId;
-        this.name = name;
     }
 
-    public long getUserId() {
+    public final long getUserId() {
         return userId;
     }
 
-    public String getName() {
-        return name;
-    }
+    public abstract Object getValue(String key);
 }

@@ -7,20 +7,18 @@
 
     <groupId>com.pro100kryto.server.services</groupId>
     <artifactId>UsersDatabaseService-connection</artifactId>
-    <version>1.0</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
             <groupId>com.pro100kryto.server</groupId>
             <artifactId>Server</artifactId>
-            <version>[0.1.2, 0.2)</version>
-            <scope>provided</scope>
+            <version>[0.2.0-SNAPSHOT, 0.3.0)</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.istack</groupId>
-            <artifactId>istack-commons-runtime</artifactId>
-            <version>4.0.0</version>
-            <scope>provided</scope>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>13.0</version>
         </dependency>
     </dependencies>
 
