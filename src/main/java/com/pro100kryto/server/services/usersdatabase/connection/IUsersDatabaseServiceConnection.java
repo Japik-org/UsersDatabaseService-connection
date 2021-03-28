@@ -8,9 +8,9 @@ import java.util.Map;
 
 public interface IUsersDatabaseServiceConnection extends IServiceConnection {
     boolean userExistsById(long userId) throws RemoteException;
-    boolean userExistsByKey(String name, Object value) throws RemoteException;
+    boolean userExistsByKeyValue(String name, Object value) throws RemoteException;
 
-    long createUser(String name, Map<String, Object> keyValMap) throws RemoteException;
+    long createUser(Map<String, Object> keyValMap) throws RemoteException;
 
     @Nullable UserDB getUser(long userId) throws RemoteException;
     @Nullable UserDB getFirstUser(String key, Object value) throws RemoteException;
