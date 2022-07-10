@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+
+Name: Service-Shared
+Subtype: UsersDatabase
+Version: 0.1
+Base-Package: com.japik
+
