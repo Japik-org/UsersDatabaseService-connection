@@ -1,23 +1,40 @@
 package com.japik.services.usersdatabase.shared;
 
-import com.japik.services.usersdatabase.shared.req.IFieldRequest;
-import com.japik.services.usersdatabase.shared.req.IGetFieldRequest;
-import com.japik.services.usersdatabase.shared.req.IOperationRequest;
+import com.japik.utils.databasequery.req.*;
 
-public interface IUser {
-    IGetFieldRequest<Long> reqId();
-    IFieldRequest<String> reqUsername();
-    IFieldRequest<String> reqEmail();
+import java.rmi.RemoteException;
 
-    IGetFieldRequest<Boolean> reqVerifyPassword(byte[] pass) throws Throwable;
-    IOperationRequest reqSetPassword(byte[] pass) throws Throwable;
+public interface IUser extends IQueryMaker {
+    IGetFieldRequest<Long> reqId() throws RemoteException;
+    IFieldRequest<String> reqUsername() throws RemoteException;
+    IFieldRequest<String> reqEmail() throws RemoteException;
 
-    /** Request all data in one request */
-    void queryGet() throws Throwable;
+    IGetFieldRequest<Boolean> reqVerifyPassword(byte[] pass) throws RemoteException;
+    IOperationRequest reqSetPassword(byte[] pass) throws RemoteException;
 
-    /** Save all changes in one request */
-    void queryUpdate() throws Throwable;
+    /**
+     * Request all data in one request
+     * @throws UserNotFoundException
+     * @throws DatabaseQueryException
+     * @throws OnResolveQueryException
+     */
+    @Override
+    void queryGet() throws RemoteException, UserNotFoundException, DatabaseQueryException, OnResolveQueryException;
 
-    /** Create new user */
-    void queryInsert() throws Throwable;
+    /**
+     * Save all changes in one request
+     * @throws UserNotFoundException
+     * @throws DatabaseQueryException
+     * @throws OnUpdateQueryException
+     */
+    @Override
+    void queryUpdate() throws RemoteException, UserNotFoundException, DatabaseQueryException, OnUpdateQueryException;
+
+    /**
+     * Create new user
+     * @throws UserAlreadyExistsException
+     * @throws DatabaseQueryException
+     */
+    @Override
+    void queryInsert() throws RemoteException, UserAlreadyExistsException, DatabaseQueryException;
 }

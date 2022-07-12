@@ -5,8 +5,6 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-public class UserInsert implements IUserInsert {
+public class UserNotFoundByUsernameException extends UserNotFoundException {
     private final String username;
-    private final String email;
-    private final byte[] pass;
 }

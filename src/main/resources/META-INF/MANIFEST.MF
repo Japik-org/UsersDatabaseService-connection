@@ -4,4 +4,5 @@ Name: Service-Shared
 Subtype: UsersDatabase
 Version: 0.1
 Base-Package: com.japik
+Lib-Shared-Jar: database-query-1.0.jar
 
