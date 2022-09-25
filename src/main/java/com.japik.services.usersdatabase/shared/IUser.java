@@ -5,7 +5,7 @@ import com.japik.utils.databasequery.req.*;
 import java.rmi.RemoteException;
 
 public interface IUser extends IQueryMaker {
-    IGetFieldRequest<Long> reqId() throws RemoteException;
+    IGetFieldRequest<Object> reqId() throws RemoteException;
     IFieldRequest<String> reqUsername() throws RemoteException;
     IFieldRequest<String> reqEmail() throws RemoteException;
 
