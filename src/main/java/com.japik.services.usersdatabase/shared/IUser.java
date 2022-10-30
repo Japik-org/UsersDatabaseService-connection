@@ -14,21 +14,21 @@ public interface IUser extends IQueryMaker {
 
     /**
      * Request all data in one request
-     * @throws UserNotFoundException
+     * @throws ObjectNotFoundException user not found
      * @throws DatabaseQueryException
      * @throws OnResolveQueryException
      */
     @Override
-    void queryGet() throws RemoteException, UserNotFoundException, DatabaseQueryException, OnResolveQueryException;
+    void queryGet() throws RemoteException, ObjectNotFoundException, DatabaseQueryException, OnResolveQueryException;
 
     /**
      * Save all changes in one request
-     * @throws UserNotFoundException
+     * @throws ObjectNotFoundException user not found
      * @throws DatabaseQueryException
      * @throws OnUpdateQueryException
      */
     @Override
-    void queryUpdate() throws RemoteException, UserNotFoundException, DatabaseQueryException, OnUpdateQueryException;
+    void queryUpdate() throws RemoteException, ObjectNotFoundException, DatabaseQueryException, OnUpdateQueryException;
 
     /**
      * Create new user
