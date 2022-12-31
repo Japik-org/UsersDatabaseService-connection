@@ -8,6 +8,8 @@
     <artifactId>usersdatabase-service-shared</artifactId>
     <version>0.2</version>
 
+    <name>UsersDatabase Service Shared</name>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
